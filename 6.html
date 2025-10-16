@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AI</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Verdana, sans-serif;
+        list-style: none;
+        scroll-behavior: smooth;
+      }
+
+      .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 35px 12%;
+        background-color: rgba(0, 0, 0, 0.8);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 60px;
+        z-index: 10;
+      }
+
+      header a {
+        text-decoration: none;
+      }
+
+      .logo {
+        font-size: 25px;
+        color: white;
+        font-weight: 600;
+      }
+
+      span {
+        color: red;
+      }
+
+      .navbar a {
+        font-size: 18px;
+        color: white;
+        font-weight: 500;
+        margin: 0 20px;
+        transition: 0.3s;
+      }
+
+      .navbar a:hover {
+        color: red;
+      }
+
+      .contact {
+        padding: 10px 30px;
+        background-color: white;
+        color: black;
+        border: 2px solid transparent;
+        border-radius: 8px;
+        font-size: 15px;
+        letter-spacing: 1px;
+        font-weight: 600;
+        transition: 0.3s;
+      }
+
+      .contact:hover {
+        background-color: red;
+        box-shadow: 0 0 25px red;
+        color: white;
+      }
+
+      .one {
+        height: 100vh;
+        background-color: white;
+        display: flex;
+        margin-top: 60px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding-top: 60px;
+      }
+
+      .one h1 {
+        font-size: 60px;
+        margin-bottom: 15px;
+      }
+
+      .one p {
+        font-size: 20px;
+        color: gray;
+      }
+
+      .two {
+        background-color: black;
+        height: 100vh;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+      }
+
+      /* GALLERY SLIDER FIXED */
+      .dam {
+        background-color: black;
+        color: white;
+        min-height: 100vh;
+        padding: 100px 5% 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+      }
+
+      .gallery-container {
+        display: flex;
+        gap: 20px;
+        overflow-x: auto; /* make it scrollable */
+        scroll-behavior: smooth;
+        width: 80%;
+      }
+
+      .gallery-container::-webkit-scrollbar {
+        display: none;
+      }
+
+      .gallery-container img {
+        width: 300px;
+        height: 200px;
+        border-radius: 10px;
+        object-fit: cover;
+        transition: 0.3s;
+        flex-shrink: 0;
+      }
+
+      .gallery-container img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 20px red;
+      }
+
+      .arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 40px;
+        color: white;
+        cursor: pointer;
+        user-select: none;
+      }
+
+      .arrow.left {
+        left: 30px;
+      }
+
+      .arrow.right {
+        right: 30px;
+      }
+
+.more-link {
+  position: absolute;
+  bottom: 30px;
+  font-size: 18px;
+  color: red;
+  text-decoration: none;
+  border: 2px solid red;
+  padding: 10px 20px;
+  border-radius: 10px;
+  transition: 0.3s;
+  background: transparent;
+}
+
+.more-link:hover {
+  color: white;
+  background: red;
+  box-shadow: 0 0 15px red, 0 0 30px red;
+  transform: scale(1.05);
+}
+
+
+      #contact {
+        background-color: black;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      #contact h1 {
+        margin-bottom: 10px;
+      }
+
+      form input {
+        color: white;
+        background: black;
+        border: 1px solid white;
+        margin: 5px;
+        padding: 10px;
+      }
+
+      .footer {
+        background-color: black;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="header">
+      <a href="#" class="logo"><span>A</span>I</a>
+      <nav class="navbar">
+        <a href="#">HOME</a>
+        <a href="#about">ABOUT</a>
+        <a href="#contact">CONTACT</a>
+        <a href="#gallary">GALLERY</a>
+      </nav>
+      <a href="#contact" class="contact">CONTACT ME</a>
+    </header>
+
+    <section class="one">
+      <h1><span>A</span>I</h1>
+      <p>This page for DAMS</p>
+    </section>
+
+    <section class="two" id="about">
+      <h1>About this</h1>
+      <p>This is a page for -----. We are the person helping for it. We love to make things like this.</p>
+    </section>
+
+    <!-- Gallery -->
+    <section class="dam" id="gallary">
+      <div class="arrow left" onclick="moveSlide(-1)">&#10094;</div>
+
+      <div class="gallery-container" id="gallery">
+        <!-- <img src="dam.jpg"> -->
+        <img src="dam2.jpeg">
+        <img src="dam3.jpeg">
+        <img src="dam4.jpeg">
+        <img src="dam5.jpeg">
+        <img src="dam6.jpeg">
+      </div>
+
+      <div class="arrow right" onclick="moveSlide(1)">&#10095;</div>
+
+      <a href="gallery2.html" class="more-link">Click me for more images</a>
+    </section>
+
+    <section class="two" id="contact">
+      <h1>Contact <span>me</span></h1>
+      <form>
+        <input type="text" placeholder="ENTER YOUR NAME">
+        <input type="email" placeholder="ENTER YOUR EMAIL">
+        <input type="text" placeholder="Your MSG">
+        <input type="button" value="Submit" onclick="window.location.href='thankyou.html'">
+      </form>
+    </section>
+
+    <footer class="footer">
+      &copy;💓 All rights reserved!
+    </footer>
+
+    <script>
+      const gallery = document.getElementById("gallery");
+      let scrollAmount = 0;
+
+      function moveSlide(direction) {
+        const slideWidth = 320; // image width + gap
+        scrollAmount += direction * slideWidth;
+
+        if (scrollAmount < 0) scrollAmount = 0;
+        if (scrollAmount > gallery.scrollWidth - gallery.clientWidth)
+          scrollAmount = gallery.scrollWidth - gallery.clientWidth;
+
+        gallery.scrollTo({
+          left: scrollAmount,
+          behavior: "smooth",
+        });
+      }
+    </script>
+  </body>
+</html>
